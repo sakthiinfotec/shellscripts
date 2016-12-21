@@ -7,8 +7,8 @@
 # The generated hive queries will be stored in partition-qry_<YYYY-MM-DD>.hql file.
 #
 # Syntax:
-#   sh load-partitions-incremental.sh 2016-10-10
-#   sh load-partitions-incremental.sh 2016-10-10 2016-10-25
+#   sh create-partitions-incremental.sh 2016-10-10
+#   sh create-partitions-incremental.sh 2016-10-10 2016-10-25
 
 function show_usage() {
     echo ""

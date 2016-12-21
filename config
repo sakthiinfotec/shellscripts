@@ -1,0 +1,18 @@
+# Configuration file used by Hive partition shell scripts.
+
+# Hive Database name
+DATABASE=feeds
+
+# Base directory path of feeds
+FEED_BASE_PATH="/home/sakthi/feeds"
+
+
+# Declaration of associative array to map feed-id and it's properties such as 
+# feed's-hdfs-path, hive-tablename
+# Syntax:
+#   feed_props_map["feed-id"]="<feed's-hdfs-path>:<feed's-hive-tablename>"
+declare -A feed_props_map
+
+# Feed properties
+feed_props_map["TWTR.IO2016.H"]="${FEED_BASE_PATH}/twitter:twtr_io2016_hourly"
+feed_props_map["TWTR.IO2016.D"]="${FEED_BASE_PATH}/twitter:twtr_io2016_daily"

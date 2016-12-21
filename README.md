@@ -1,2 +1,2 @@
 # shellscripts
-Linux shellscripts
+Linux shellscript collections

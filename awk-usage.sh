@@ -13,3 +13,11 @@ awk 'BEGIN{FS=","} { sum+=$3; print $3} END{ print "Total Salary:",sum}' employe
 
 # Prints file-name, record number, file specific record number, record/line
 awk '{print FILENAME, NR, FNR, $0}' file1 file2 file3
+
+# Extract full line when column 4 has 2 or more characters separated by comma
+awk '$4 ~ ","' file
+awk '$4 ~ /([[:alpha:]])+,[[:alpha:]]/{print}' file
+awk 'length($4) > 2 && $4 ~ /^([^,],)+[^,]$/' file
+
+# Extract full line when column 4 has 2 or more characters(A,E,I,O,U) separated by comma
+awk 'length($4) > 2 && $4 ~ /([AEIOU],)+[AEIOU]/' file

@@ -43,6 +43,12 @@ Unix
 sed -n '$p' file
 HPUX
 
+# Print from 3rd line till last line.
+sed -n '3,$p' months
+Unix
+Linux
+HPUX
+
 # Print lines which does not contain 'X': Below !p indicates the negative condition to print.
 sed -n '/X/!p' file
 Solaris

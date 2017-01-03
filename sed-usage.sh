@@ -98,3 +98,28 @@ HPUX
 sed -n '/Solaris/,/HPUX/{//!p;}' file
 Unix
 Linux
+
+# DELETE Operations
+# -----------------
+# Delete if line is not a 4th line or delete all except 4th line
+sed '4!d' file
+Linux
+
+# Alternatively print only 4th line
+sed -n 4p file
+Linux
+
+# EXTRACT RANGE OF LINES
+# ----------------------
+# To extract range of lines
+sed -n 2,4p file
+sed '2,4!d' file
+Solaris
+Unix
+Linux
+
+# Extract range of lines not in a specific sequence
+sed -n -e 1,2p -e 4p file
+AIX
+Solaris
+Linux

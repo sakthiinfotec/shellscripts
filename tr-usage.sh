@@ -1,4 +1,5 @@
 #!/bin/sh
+# Usage of translate(tr) command
 # Usage: sh tr-usage.sh
 
 word="Hello World!"

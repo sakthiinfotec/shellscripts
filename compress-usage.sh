@@ -1,5 +1,5 @@
 #!/bin/sh
-# Commands(zip/unzip, tar, gzip/gunzip, bzip2/bunzip2, 7zip) used to compress and uncompress files and directories
+# Commands(zip/unzip, tar, gzip/gunzip, bzip2/bunzip2, 7za, jar) used to compress and uncompress files and directories
 # Usage: sh compress-usage.sh
 
 # 1. ZIP Command
@@ -30,3 +30,12 @@ gzip result.tar
 
 # To un compress(-x)
 tar -xvzf result.tar.gz
+
+# 3. Java's JAR command
+# ---------------------
+# Sometimes java's jar(java archive) command also handy to archive files/directories
+# Archive using jar(-M to ignore adding manifest info, otherwise by default it adds manifest info inside the archive)
+jar -cvfM result.zip ./output
+
+# Extract the archive
+jar -xvf result.zip

@@ -8,10 +8,10 @@
 zip result.zip file1 file2 file3
 
 # To zip a directory(-r -> recursive)
-zip -r squash.zip ./output
+zip -r result.zip ./output
 
 # To uncompress: (this unzips it in our current working directory)
-unzip squash.zip
+unzip result.zip
 
 # 2. TAR / GZIP / BZIP2 Commands
 # ------------------------------

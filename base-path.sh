@@ -15,4 +15,7 @@ cd $filename
 echo "PWD: $(pwd)"
 
 # or the above same command in a single line
-echo "$( cd $( dirname $0 ) && pwd )"
+basepath="$( cd $( dirname $0 ) && pwd )"
+
+# or 
+basepath="$( cd `dirname $0` && pwd )"

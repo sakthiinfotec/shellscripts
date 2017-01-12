@@ -1,5 +1,6 @@
 #!/bin/sh
-# Commands used to schedule a batch job in a minutes, hourly, daily, monthly and weekly.
+# Commands used to schedule a batch job, backup files and transfer files in a minutes, hourly, daily, 
+# monthly and weekly intervals.
 # Usage: sh cron-usage.sh
 
 # As per wiki(https://en.wikipedia.org/wiki/Cron), cron schedule pattern

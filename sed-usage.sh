@@ -44,7 +44,7 @@ sed -n '$p' file
 HPUX
 
 # Print from 3rd line till last line.
-sed -n '3,$p' months
+sed -n '3,$p' file
 Unix
 Linux
 HPUX

@@ -21,3 +21,6 @@ awk 'length($4) > 2 && $4 ~ /^([^,],)+[^,]$/' file
 
 # Extract full line when column 4 has 2 or more characters(A,E,I,O,U) separated by comma
 awk 'length($4) > 2 && $4 ~ /([AEIOU],)+[AEIOU]/' file
+
+# Delete a particular line in a file
+awk '!/pattern/' file > temp && mv temp file

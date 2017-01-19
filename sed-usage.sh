@@ -39,6 +39,23 @@ AIX
 sed -n '3p' file
 Unix
 
+# Remove the line containing the string "windows"
+sed '/Windows/d' file
+
+# Remove the last line by typing in: 
+sed '$d' file
+
+# Remove all empty lines through: 
+sed '/^$/d' file
+sed '/./!d' file
+
+# Remove the line matching by a regular expression (by eliminating one containing digital characters, 
+# at least 1 digit, located at the end of the line)
+sed '/[0-9/][0-9]*$/d' file
+
+# Remove the interval between lines 8 and 15:
+sed '8,15d' file
+
 # Print only the last line of the file. Below $ indicates the last line.
 sed -n '$p' file
 HPUX
@@ -126,3 +143,6 @@ Linux
 
 # Edit/delete line in place
 sed --in-place '/word-or-regex-pattern-to-delete-goes-here/d' file
+
+# Takes a backup of a file(with .bak extension) and delte in the same file
+sed -i".bak" '3d' file

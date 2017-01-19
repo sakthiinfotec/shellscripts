@@ -1,2 +1,2 @@
 # shellscripts
-Linux shellscript collections
+Linux - a random shellscript collections

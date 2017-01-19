@@ -123,3 +123,6 @@ sed -n -e 1,2p -e 4p file
 AIX
 Solaris
 Linux
+
+# Edit/delete line in place
+sed --in-place '/word-or-regex-pattern-to-delete-goes-here/d' file

@@ -38,3 +38,10 @@ grep -E "^Sep [[:digit:]]{1,2}\b" file
 
 # Search for any month with day:
 grep -E "^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [[:digit:]]{1,2}\b" file
+
+# Search with color highlight
+ls -l | grep --color=auto 'Jan 30'
+
+egrep -w 'warning|error|critical' /var/log/messages
+egrep -wi --color 'warning|error|critical' /var/log/messages
+egrep -wi --color '2017-01-28' audit-log.*

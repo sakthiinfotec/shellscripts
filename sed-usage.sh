@@ -1,6 +1,17 @@
 #!/bin/sh
 # Usage: sh sed-usage.sh
 
+# Syntax - sed:
+# sed '{[/]<n>|<string>|<regex>[/]}d' <fileName>       
+# sed '{[/]<adr1>[,<adr2>][/]d' <fileName>
+# where,
+#   /.../=delimiters 
+#   n = line number 
+#   string = string found in in line 
+#   regex = regular expression corresponding to the searched pattern 
+#   addr = address of a line (number or pattern ) 
+#   d = delete 
+
 # 1. Print comma(,) separated list of items one-by-one in a new line
 STATES=Arizona,California,Texas
 

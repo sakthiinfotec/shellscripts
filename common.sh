@@ -22,3 +22,11 @@ ls -l /proc/*/fd | grep "chrome"
 
 # List a sorted uniq column values
 cat /tmp/tmp-file | awk -F: '{print $2}' | sort | uniq
+
+# Base64 Encode
+echo "Hello World" | base64
+# O/P: SGVsbG8gV29ybGQK
+
+# Base64 Decode
+echo "SGVsbG8gV29ybGQK" | base64 --decode
+# O/P: Hello World

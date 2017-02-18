@@ -30,3 +30,9 @@ echo "Hello World" | base64
 # Base64 Decode
 echo "SGVsbG8gV29ybGQK" | base64 --decode
 # O/P: Hello World
+
+# Access System Environment variables
+env
+
+# Grep a particular environment variable
+env | grep JAVA_HOME

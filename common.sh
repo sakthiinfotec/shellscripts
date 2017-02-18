@@ -10,7 +10,7 @@ scp /source/file/path user@target-host:/path
 # use -r if folder
 scp -r /source/folder/path user@target-host:/path
 
-# To list down the processes which are using files right now
+# To list down the processes which are using files right now. -r1 indicates refresh
 lsof -r1 /tmp/sort9nkNt9
 lsof -r1 /some/dir/*
 

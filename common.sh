@@ -41,7 +41,7 @@ env | grep JAVA_HOME
 cat /etc/*-release
 cat /proc/version
 lsb_release -a
+uname -r
 
 # Find out Linux kernal version
 uname -a
-

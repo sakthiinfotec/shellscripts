@@ -45,3 +45,17 @@ uname -r
 
 # Find out Linux kernal version
 uname -a
+
+# To get group and did details of a Linux user
+id <userid/username>
+# Eg.
+id hadoop
+id nginx
+
+# List user groups
+groups <username>
+groups hadoop
+
+# User and Group commands
+sudo groupadd docker
+sudo usermod -aG docker ubuntu

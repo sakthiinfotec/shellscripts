@@ -59,3 +59,10 @@ groups hadoop
 # User and Group commands
 sudo groupadd docker
 sudo usermod -aG docker ubuntu
+
+# Change user's home dirctory
+usermod -d </new/home/path> userid
+
+# Example
+# usermod -d /share/users/sakthi sakthi
+

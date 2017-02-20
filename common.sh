@@ -60,9 +60,12 @@ groups hadoop
 sudo groupadd docker
 sudo usermod -aG docker ubuntu
 
-# Change user's home dirctory
+# Change user's home dirctory, shell and UIDs
 usermod -d </new/home/path> userid
+usermod -d /share/users/sakthi sakthi
 
-# Example
-# usermod -d /share/users/sakthi sakthi
+usermod -s <default shell> username
+usermod -s /bin/bash username
 
+usermod -u <UserID> username
+usermod -u 1211 username

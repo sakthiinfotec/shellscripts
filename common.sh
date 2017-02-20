@@ -36,3 +36,12 @@ env
 
 # Grep a particular environment variable
 env | grep JAVA_HOME
+
+# Commands to find Linux distribution name
+cat /etc/*-release
+cat /proc/version
+lsb_release -a
+
+# Find out Linux kernal version
+uname -a
+

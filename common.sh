@@ -20,6 +20,15 @@ lsof +r2 | grep '/tmp/sort'
 # We can use ls and grep to find out the files used by chrome
 ls -l /proc/*/fd | grep "chrome"
 
+# list only files
+ls -al | egrep -v "^d.*"
+
+# join multi row of lines into a single line separate by delimitter(,)
+ls | tr '\n' ','
+
+# Prepend a line/header to an existing file
+echo "id,name,salary"|cat - employee > /tmp/employee-with-header
+
 # List a sorted uniq column values
 cat /tmp/tmp-file | awk -F: '{print $2}' | sort | uniq
 

@@ -80,5 +80,5 @@ usermod -u <UserID> username
 usermod -u 1211 username
 
 # Initiate, redirection of output and error logs into a log file at one place(preferable at the begining)
-ERROR_LOG_FILE="error-`date '+%Y-%m-%d_%H%M%S`.log"
+ERROR_LOG_FILE="error-`date '+%Y-%m-%d_%H%M%S'`.log"
 exec > $ERROR_LOG_FILE 2>&1

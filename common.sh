@@ -92,5 +92,11 @@ eval "cat <<< \"$(<scripts.template.sql)\"" > scripts.sql  2> /dev/null
 # String interpolcation with template file using "envsubst"
 export START_DATE="$CURR_DT"
 export END_DATE="$CURR_DT"
-
 envsubst < scripts.template.sql > scripts.sql
+
+# Include or execute another script file using dot(. ./) or source command
+. ./config
+# or
+source ./config
+# Print $USER_NAME from ./config file
+echo "$USER_NAME"

@@ -84,13 +84,13 @@ ERROR_LOG_FILE="error-`date '+%Y-%m-%d_%H%M%S'`.log"
 exec > $ERROR_LOG_FILE 2>&1
 
 # String interpolcation with template file using "eval" & "envsubst"
-CURR_DT=$(date +%Y-%m-%d)
-START_DATE="$CURR_DT"
+CURR_DT=$(date '+%Y-%m-%d')
+START_DATE=$(date -d $CURR_DT' -1month' +%Y-%m-%d)
 END_DATE="$CURR_DT"
-eval "cat <<< \"$(<scripts.template)\"" > scripts.sql  2> /dev/null
+eval "cat <<< \"$(<scripts.template.sql)\"" > scripts.sql  2> /dev/null
 
 # String interpolcation with template file using "envsubst"
 export START_DATE="$CURR_DT"
 export END_DATE="$CURR_DT"
 
-envsubst < scripts.template > scripts.sql
+envsubst < scripts.template.sql > scripts.sql

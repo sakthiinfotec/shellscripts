@@ -100,3 +100,9 @@ envsubst < scripts.template.sql > scripts.sql
 source ./config
 # Print $USER_NAME from ./config file
 echo "$USER_NAME"
+
+# sleep & wait - Example
+{ sleep 10; echo "Waking up after 10 seconds"; } &
+{ sleep 4; echo "Waking up after 4 seconds"; } &
+wait
+echo "All jobs are done!"

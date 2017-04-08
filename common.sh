@@ -106,3 +106,12 @@ echo "$USER_NAME"
 { sleep 4; echo "Waking up after 4 seconds"; } &
 wait
 echo "All jobs are done!"
+
+# shell 'magic' variables
+$$ # same 'bash' shell process id or $BASHPID
+$! # Last background process id
+$? # Last process exit status
+$# # Input count
+$@ # Input as single array
+$0 # The script name itself
+$<n> # Read positional input Eg. $1

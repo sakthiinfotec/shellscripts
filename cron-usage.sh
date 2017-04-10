@@ -23,3 +23,6 @@ crontab -l
 # $ crontab -l
 # 30 03 10 1,4,7,10 * /opt/analytics/jobs/run-quarterly.sh
 # The above job will run every quarter(Jan, Apr, Jul, Oct), 10th date, 3:30 AM hours.
+
+# Schedule job in background
+# Ref: https://keyj.wordpress.com/2010/01/26/run-a-background-process-from-a-crontab/

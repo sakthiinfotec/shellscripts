@@ -28,3 +28,6 @@ awk '!/pattern/' file > temp && mv temp file
 # Combine with Pipe input
 ls -l | awk '!($9=="") { print $9 }'
 cat /etc/group | awk -F':' '{ print $3 }'
+
+# RegEx patterns(~ /pattern/)
+cat products.csv | awk '$4 ~ /electronics/{print}'

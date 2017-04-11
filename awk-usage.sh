@@ -24,3 +24,7 @@ awk 'length($4) > 2 && $4 ~ /([AEIOU],)+[AEIOU]/' file
 
 # Delete a particular line in a file
 awk '!/pattern/' file > temp && mv temp file
+
+# Combine with Pipe input
+ls -l | awk '!($9=="") { print $9 }'
+cat /etc/group | awk -F':' '{ print $3 }'

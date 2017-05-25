@@ -19,6 +19,9 @@ for state in $(echo $STATES | sed "s/,/ /g"); do
   echo $state
 done
 
+# Below will replace backslash(\) with empty string in the file sample
+sed -i -e 's/\\//g' sample
+
 # 2. Insert a line or column header at first row in a file
 sed -i '1s/^/Id,Name,Salary\n/' employee-list.csv
 

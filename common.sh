@@ -115,3 +115,7 @@ $# # Input count
 $@ # Input as single array
 $0 # The script name itself
 $<n> # Read positional input Eg. $1
+
+# Find size of a file
+stat --printf="%s" products.csv
+

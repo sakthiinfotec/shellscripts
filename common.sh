@@ -151,3 +151,10 @@ until (ls $file >/dev/null 2>&1); do
 done;
 echo 'File $file ready!';  
 
+# Log util function
+function log() {
+  local msg=$1
+  local datetime=$(date '+%Y-%m-%d %k:%M:%S')
+  echo "$datetime $msg"
+}
+log "File $file download completed"  

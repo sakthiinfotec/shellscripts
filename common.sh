@@ -141,3 +141,13 @@ lftp sftp://ftpuser:password123@ftp.example.com -e "cd latest; lcd downloads; mg
 # File System conditions
 [ -f "$PID_FILE" ] && echo "Process ID $(cat $PID_FILE)" || echo "PID file doesn't exists"
 [ ! -z "$PID_FILE" ] && echo "Process ID $(cat $PID_FILE)" || echo "PID file is empty"
+
+# Until with Retry using sleep
+file=myapp.log
+interval=10
+until (ls $file >/dev/null 2>&1); do
+    echo 'Log file $file not ready yet. Will try again in $interval seconds.';
+    sleep $interval;
+done;
+echo 'File $file ready!';  
+

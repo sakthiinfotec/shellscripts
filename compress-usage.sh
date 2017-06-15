@@ -16,6 +16,9 @@ zip -r result.zip ./output
 # To uncompress: (this unzips it in our current working directory)
 unzip result.zip
 
+# unzips files under specified path
+unzip result.zip -d /home/sakthi/downloads
+
 # Omit -j -> ignore creation of(junk) directory path -o -> overwrite
 unzip -jo compressed.zip
 

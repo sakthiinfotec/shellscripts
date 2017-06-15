@@ -118,6 +118,7 @@ $<n> # Read positional input Eg. $1
 
 # Find size of a file
 stat --printf="%s" products.csv
+ls -l products.csv | awk '{print $6}'
 
 # Get Application Home/Install path
 APP_HOME=$( cd "$(dirname "$0")/.." && pwd )

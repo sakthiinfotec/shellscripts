@@ -132,3 +132,7 @@ find $LOG_PATH -mtime +15 -type f -delete
 # SFTP download of files
 lftp sftp://ftpuser:password123@ftp.example.com -e "cd latest; lcd downloads; get products.csv; bye" >/dev/null 2>&1
 lftp sftp://ftpuser:password123@ftp.example.com -e "cd latest; lcd downloads; mget abc_*.zip; bye" >/dev/null 2>&1
+
+# File System conditions
+[ -f "$PID_FILE" ] && echo "Process ID $(cat $PID_FILE)" || echo "PID file doesn't exists"
+[ ! -z "$PID_FILE" ] && echo "Process ID $(cat $PID_FILE)" || echo "PID file is empty"

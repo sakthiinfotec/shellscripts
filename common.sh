@@ -123,4 +123,12 @@ stat --printf="%s" products.csv
 APP_HOME=$( cd "$(dirname "$0")/.." && pwd )
 
 # Create logs dir under APP_HOME
-mkdir -p $APP_HOME/logs
+LOG_PATH=$APP_HOME/logs
+mkdir -p $LOG_PATH/logs
+
+# Delete log files older than N days(here 15 days)
+find $LOG_PATH -mtime +15 -type f -delete
+
+# SFTP download of files
+lftp sftp://ftpuser:password123@ftp.example.com -e "cd latest; lcd downloads; get products.csv; bye" >/dev/null 2>&1
+lftp sftp://ftpuser:password123@ftp.example.com -e "cd latest; lcd downloads; mget abc_*.zip; bye" >/dev/null 2>&1

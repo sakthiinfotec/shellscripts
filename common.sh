@@ -119,3 +119,8 @@ $<n> # Read positional input Eg. $1
 # Find size of a file
 stat --printf="%s" products.csv
 
+# Get Application Home/Install path
+APP_HOME=$( cd "$(dirname "$0")/.." && pwd )
+
+# Create logs dir under APP_HOME
+mkdir -p $APP_HOME/logs

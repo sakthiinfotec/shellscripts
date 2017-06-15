@@ -7,11 +7,17 @@
 # Compress one or more files
 zip result.zip file1 file2 file3
 
+# Omit directory path(-j junk path)
+zip -j compressed.zip /path/to/file
+
 # To zip a directory(-r -> recursive)
 zip -r result.zip ./output
 
 # To uncompress: (this unzips it in our current working directory)
 unzip result.zip
+
+# Omit -j -> ignore creation of(junk) directory path -o -> overwrite
+unzip -jo compressed.zip
 
 # 2. TAR / GZIP / BZIP2 Commands
 # ------------------------------

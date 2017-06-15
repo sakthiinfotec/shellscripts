@@ -48,3 +48,6 @@ jar -cvfM result.zip ./output
 
 # Extract the archive
 jar -xvf result.zip
+
+# View contents of compressed file without uncompressing
+zcat compressed.zip | head -n 10

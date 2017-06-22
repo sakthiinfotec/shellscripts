@@ -87,7 +87,7 @@ passwd sakthi
 ERROR_LOG_FILE="error-`date '+%Y-%m-%d_%H%M%S'`.log"
 exec > $ERROR_LOG_FILE 2>&1
 
-# String interpolcation with template file using "eval" & "envsubst"
+# String interpolation with template file using "eval" & "envsubst"
 CURR_DT=$(date '+%Y-%m-%d')
 START_DATE=$(date -d $CURR_DT' -1month' +%Y-%m-%d)
 END_DATE="$CURR_DT"

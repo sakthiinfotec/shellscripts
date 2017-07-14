@@ -158,3 +158,7 @@ function log() {
   echo "$datetime $msg"
 }
 log "File $file download completed"  
+
+# Sending mail with attachment via mail - command
+echo "Hi Team - Batch ${JOBID} Job completed"| mail -s "Batch Job ${JOBID} - Success" ${MAIL_TO_LIST}
+echo "Hi Team - Batch ${JOBID} Job Failed. PFA log file for more details!"| mail -a ${LOG_FILE} -s "Batch Job ${JOBID} - Failed!" ${MAIL_TO_LIST}

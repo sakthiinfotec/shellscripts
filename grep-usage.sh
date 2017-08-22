@@ -31,8 +31,6 @@ grep -hon 'aru.*' tmp tmp.bak props | awk '{print NR,$1}'
 # Combine with awk, to print matched records with line number
 grep -hon 'aru.*' tmp tmp.bak props | awk '{print NR,$1}'
 
-If you are looking for any day in May:
-
 # Search any line starts with month and date, eg. Sep 15
 grep -E "^Sep [[:digit:]]{1,2}\b" file
 

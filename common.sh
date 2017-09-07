@@ -169,3 +169,33 @@ ymd=$(date +%Y%m%d)
 echo ${ymd:0:4}
 echo ${ymd:4:2}
 echo ${ymd:6:2}
+
+# Shell ereor handling
+# --------------------
+set -ex # Exit when Non-zero returns after executing a command / x - debug
+set -o errexit # Readable version of set -e; To disable temporarily: set +e
+set -o nounset # set -u, to detect unset variables in the shellscript
+
+# trap - usage
+error_exit() {
+    JOB="$0"              # job name
+    LASTLINE="$1"         # line of error occurrence
+    LASTERR="$2"          # error code
+    echo "ERROR in ${JOB} : line ${LASTLINE} with exit code ${LASTERR}"
+    exit 1
+}
+trap 'error_exit ${LINENO} ${?}' ERR
+
+ls -la un-known-file.sh
+
+# Important usage of trap
+# Ref http://www.davidpashley.com/articles/writing-robust-shell-scripts/
+if [ ! -e $lockfile ]; then
+   trap "rm -f $lockfile; exit" INT TERM EXIT
+   touch $lockfile
+   critical-section
+   rm $lockfile
+   trap - INT TERM EXIT
+else
+   echo "critical-section is already running"
+fi

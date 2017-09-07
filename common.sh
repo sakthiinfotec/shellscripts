@@ -162,3 +162,10 @@ log "File $file download completed"
 # Sending mail with attachment via mail - command
 echo "Hi Team - Batch ${JOBID} Job completed"| mail -s "Batch Job ${JOBID} - Success" ${MAIL_TO_LIST}
 echo "Hi Team - Batch ${JOBID} Job Failed. PFA log file for more details!"| mail -a ${LOG_FILE} -s "Batch Job ${JOBID} - Failed!" ${MAIL_TO_LIST}
+
+# Using Slice Operator
+ymd=$(date +%Y%m%d)
+
+echo ${ymd:0:4}
+echo ${ymd:4:2}
+echo ${ymd:6:2}

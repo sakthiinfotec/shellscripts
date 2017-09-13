@@ -176,6 +176,9 @@ set -ex # Exit when Non-zero returns after executing a command / x - debug
 set -o errexit # Readable version of set -e; To disable temporarily: set +e
 set -o nounset # set -u, to detect unset variables in the shellscript
 
+# Also use with bash command
+bash -x command.sh
+
 # trap - usage
 error_exit() {
     JOB="$0"              # job name

@@ -199,3 +199,9 @@ if [ ! -e $lockfile ]; then
 else
    echo "critical-section is already running"
 fi
+
+# Redirect output and error into separate files
+command 1>stdout.log 2>stderr.log
+
+# stdout is the default file descriptor, can just ignore
+command >stdout.log 2>stderr.log

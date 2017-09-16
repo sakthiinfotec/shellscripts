@@ -208,3 +208,16 @@ command 1>stdout.log 2>stderr.log
 
 # stdout is the default file descriptor, can just ignore
 command >stdout.log 2>stderr.log
+
+# Run command at remote server and get back results(Password less SSH must have been enabled for this!)
+latest_file_date_from_remote=$(ssh user@135.60.225.110 "ls /bigdata/clicks | grep -oEi '[0-9]+_[0-9]+' | cut -d '_' -f2 | sort -r | sed -n '1p'")
+latest2nd_file_date_from_remote=$(ssh user@135.60.225.110 "ls /bigdata/clicks | grep -oEi '[0-9]+_[0-9]+' | cut -d '_' -f2 | sort -r | sed -n '2p'")
+
+# Generate range of dates from given Start and end dates
+# Ref: https://stackoverflow.com/questions/28226229/bash-looping-through-dates
+d=2016-08-01
+while [ "$d" != 2017-04-15 ]; do 
+  echo $d
+  d=$(date -I -d "$d + 1 day")
+  # d=$(date -d "$d + 1 day" +%Y%m%d)
+done

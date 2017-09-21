@@ -13,6 +13,8 @@ This is a collection of most frequently used shellscript collections.
 * [Errors And Signals And Traps (Oh My!) - Part 1](http://linuxcommand.org/lc3_wss0140.php)
 * [Two simple tricks for better shell script error handling](https://www.turnkeylinux.org/blog/shell-error-handling)
 * [Writing Robust Bash Shell Scripts](http://www.davidpashley.com/articles/writing-robust-shell-scripts/)
+* [When to use set -e?](https://stackoverflow.com/questions/13468481/when-to-use-set-e)
+
 
 #### 3. Redirecting STDOUT & STDERR
 * [https://stackoverflow.com/questions/2990414/echo-that-outputs-to-stderr](https://stackoverflow.com/questions/2990414/echo-that-outputs-to-stderr)

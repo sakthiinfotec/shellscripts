@@ -176,6 +176,9 @@ set -ex # Exit when Non-zero returns after executing a command / x - debug
 set -o errexit # Readable version of set -e; To disable temporarily: set +e
 set -o nounset # set -u, to detect unset variables in the shellscript
 
+# Ref: https://stackoverflow.com/questions/13468481/when-to-use-set-e
+set -o pipefail # pipefail makes things like misspeled-command | sed -e 's/^WARNING: //' raise errors
+
 # Also use with bash command
 bash -x command.sh
 

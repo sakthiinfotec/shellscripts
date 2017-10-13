@@ -224,3 +224,7 @@ while [ "$d" != 2017-04-15 ]; do
   d=$(date -I -d "$d + 1 day")
   # d=$(date -d "$d + 1 day" +%Y%m%d)
 done
+
+# Drop Hive tables those containing similar name
+hive -e "show tables 'temp_*'" | xargs -I '{}' hive -e 'drop table {}'
+

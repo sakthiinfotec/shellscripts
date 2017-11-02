@@ -228,3 +228,5 @@ done
 # Drop Hive tables those containing similar name
 hive -e "show tables 'temp_*'" | xargs -I '{}' hive -e 'drop table {}'
 
+# zcat, cut and uniqe
+zcat result.csv.zip | cut -d, -f4 | uniq | wc -l

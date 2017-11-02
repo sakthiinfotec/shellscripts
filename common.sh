@@ -230,3 +230,10 @@ hive -e "show tables 'temp_*'" | xargs -I '{}' hive -e 'drop table {}'
 
 # zcat, cut and uniqe
 zcat result.csv.zip | cut -d, -f4 | uniq | wc -l
+
+# Move only if *.zip files exists in the last run output path
+ZIP_FILES=`find $OUTPUT_PATH/ -name "*.zip"`
+if [ ! -z $ZIP_FILES ]; then
+  echo "Moving last run output(*.zip) from '$OUTPUT_PATH' into '$BACKUP_PATH'"
+  mv $OUTPUT_PATH/*.zip $BACKUP_PATH/*
+fi

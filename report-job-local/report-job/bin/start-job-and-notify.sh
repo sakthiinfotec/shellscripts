@@ -50,8 +50,9 @@ else
   
   echo -e "Hi Team,
 
-${JOB_NAME} job failed.
+${JOB_NAME} job failed with status code '$JOB_RETCODE'.
 
+Job Status Code: $JOB_RETCODE
 Job User: $USER
 Server: $HOSTNAME(`hostname -i`)
 App. Home: $APP_HOME

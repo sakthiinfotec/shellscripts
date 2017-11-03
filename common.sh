@@ -11,6 +11,7 @@ scp /source/file/path user@target-host:/path
 scp -r /source/folder/path user@target-host:/path
 
 # To list down the processes which are using files right now. -r1 indicates refresh
+# For more details, ref: https://www.tecmint.com/10-lsof-command-examples-in-linux/
 lsof -r1 /tmp/sort9nkNt9
 lsof -r1 /some/dir/*
 

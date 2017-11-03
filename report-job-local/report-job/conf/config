@@ -1,0 +1,9 @@
+# Please note that password less SSH setup is required to invoke REMOTE scripts
+REMOTE_USER_ID=sakthi
+REMOTE_HOST_IP=192.168.0.2
+
+REMOTE_REPORT_HOME=/user/automation/report-job
+REMOTE_REPORT_OUTPUT_DATA_PATH=${REMOTE_REPORT_HOME}/data/output
+
+MAIL_RECEPIENTS_WHEN_SUCCESS="dev-team@mail.com,business-team@mail.com"
+MAIL_RECEPIENTS_WHEN_FAILURE="dev-team@mail.com"

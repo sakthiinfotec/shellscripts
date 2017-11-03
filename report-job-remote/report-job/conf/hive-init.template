@@ -1,0 +1,27 @@
+SET hive.auto.convert.join=false;
+SET hive.cli.print.header=true;
+SET hive.exec.compress.intermediate=true;
+set hive.exec.dynamic.partition.mode=nonstrict
+SET hive.exec.max.created.files=1000000;
+SET hive.exec.max.dynamic.partitions.pernode=1000;
+SET hive.exec.parallel=true;
+SET hive.exec.reducers.bytes.per.reducer=1000000;
+SET hive.groupby.orderby.position.alias=true;
+SET hive.input.format=org.apache.hadoop.hive.ql.io.HiveInputFormat;
+SET hive.map.aggr=true;
+SET hive.mapred.supports.subdirectories=true;
+SET hive.merge.mapredfiles=true;
+SET hive.rpc.query.plan=true;
+SET hive.stats.fetch.column.stats=true;
+SET hive.stats.fetch.partition.stats=true;
+SET hive.support.concurrency=false;
+SET hive.support.quoted.identifiers=none;
+SET hive.vectorized.execution.enabled=true;
+SET hive.vectorized.execution.reduce.enabled=true;
+SET mapred.input.dir.recursive=true;
+SET mapred.reduce.tasks=-1;
+SET mapreduce.job.split.metainfo.maxsize=-1;
+SET mapreduce.map.memory.mb=4096;
+
+SET mapred.job.queue.name=${JOB_QUEUE_NAME};
+USE ${HIVE_DB};

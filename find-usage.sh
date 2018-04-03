@@ -11,3 +11,7 @@ find . -type f -print0 | xargs -0 -n 1 -P 4 dos2unix
 # List files by size
 find -maxdepth 1 -name "log_file.log" -size -100k
 find -maxdepth 1 -name "log_file.log" -size -100k -exec script \;
+
+# usage of exec option
+find . -name "*" -exec chgrp -v new_group '{}' ; -exec chmod -v 770 '{}' ;
+find . -name "*" -exec sh -c 'chgrp -v new_group "$0" ; chmod -v 770 "$0"' {} ;

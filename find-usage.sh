@@ -15,3 +15,6 @@ find -maxdepth 1 -name "log_file.log" -size -100k -exec script \;
 # usage of exec option
 find . -name "*" -exec chgrp -v new_group '{}' ; -exec chmod -v 770 '{}' ;
 find . -name "*" -exec sh -c 'chgrp -v new_group "$0" ; chmod -v 770 "$0"' {} ;
+
+# Remove all the .js files in the current and sub directories except ./node_modules/* and ./dist/*
+find . -name '*.js' -not -path './node_modules/*' -not -path './dist/*' -delete
